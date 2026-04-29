@@ -18,3 +18,6 @@ app.get("/secret", (req, res) => {
 app.listen(PORT, () => { 
   console.log("Server running on port " + PORT); 
 });
+app.get("/test", (req, res) => {
+  res.send("CI/CD is working for auto-development");
+});
