@@ -1,10 +1,8 @@
 const express = require("express"); 
 const app = express(); 
- 
-// Use environment variable for PORT 
+  
 const PORT = process.env.PORT || 3000; 
  
-// Example environment variable (dummy) 
 const SECRET = process.env.JWT_SECRET || "defaultsecret"; 
  
 app.get("/", (req, res) => { 
@@ -14,7 +12,9 @@ app.get("/", (req, res) => {
 app.get("/secret", (req, res) => { 
   res.send("Secret is: " + SECRET); 
 }); 
- 
+ app.get("/test", (req, res) => {
+  res.send("CI/CD is working");
+});
 app.listen(PORT, () => { 
   console.log("Server running on port " + PORT); 
 });
